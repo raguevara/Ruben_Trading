@@ -2,6 +2,7 @@
 
 # IMPORTAR ACCIONES DE alpha_vantage
 
+#importar librerias
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators
 from alpha_vantage.sectorperformance import SectorPerformances
@@ -14,8 +15,10 @@ matplotlib.rcParams['figure.figsize'] = (20.0, 10.0)
 import pandas as pd
 from datetime import datetime
 
+#llave de alpha_vantage
 ts = TimeSeries(key='FH69CNJPTEAVXKHO',output_format='pandas')
 
+#importar datos
 aapl, meta_data = ts.get_intraday(symbol='AAPL',interval='1min', outputsize='compact')
 aapl = aapl.rename(columns = {'1. open':'open','2. high':'high','3. low':'low','4. close':'close','5. volume':'volume'})
 print(aapl.head())
