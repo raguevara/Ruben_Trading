@@ -19,6 +19,6 @@ from datetime import datetime
 ts = TimeSeries(key='FH69CNJPTEAVXKHO',output_format='pandas')
 
 #importar datos
-aapl, meta_data = ts.get_intraday(symbol='AAPL',interval='1min', outputsize='compact')
+aapl, meta_data = ts.get_intraday(symbol='AAPL',interval='1min', outputsize='full')
 aapl = aapl.rename(columns = {'1. open':'open','2. high':'high','3. low':'low','4. close':'close','5. volume':'volume'})
 print(aapl.head())
